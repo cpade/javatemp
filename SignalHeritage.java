@@ -4,11 +4,10 @@ import java.rmi.server.UnicastRemoteObject;
 
 
 public class SignalHeritage extends UnicastRemoteObject implements monSignal{
-    private int id = -1;
-    private Object message = null;
+    private int id;
+    private Object message;
 
     public SignalHeritage() throws java.rmi.RemoteException{
-        super();
         this.id = 1;
         this.message = "init";
     }

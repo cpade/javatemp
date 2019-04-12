@@ -1,10 +1,10 @@
 package RMI_Git;
 
+import java.rmi.RemoteException;
+
 public interface monSignal extends java.rmi.Remote{
-    int id = -1;
-    Object message=null;
-    int getId();
-    boolean setId(int a);
-    Object getMsg();
-    boolean setMsg(Object a);
+    int getId() throws RemoteException;
+    boolean setId(int a) throws RemoteException;
+    Object getMsg() throws RemoteException;
+    boolean setMsg(Object a) throws RemoteException;
 }
