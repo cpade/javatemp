@@ -1,6 +1,6 @@
-package RMI_Main;
+package RMI_Git;
 
-public interface monSignal {
+public interface monSignal extends java.rmi.Remote{
     int id = -1;
     Object message=null;
     int getId();
