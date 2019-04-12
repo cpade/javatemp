@@ -15,7 +15,10 @@ public class Main {
             if(System.getenv("ServBool")=="false"){
                 registry = LocateRegistry.getRegistry("127.0.0.1", 2000);
                 monSignal mi = (monSignal) registry.lookup("rmi://localhost:2000/coucou");
-//                mi.methode();
+                try {
+                    mi.methode();
+                } catch (InterruptedException e) { e.printStackTrace(); }
+
             }else{
                 registry = LocateRegistry.createRegistry(2000);
                 monSignal mc = new SignalHeritage();

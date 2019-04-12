@@ -1,6 +1,8 @@
 package RMI_Git;
 
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.concurrent.TimeUnit;
 
 
 public class SignalHeritage extends UnicastRemoteObject implements monSignal{
@@ -15,7 +17,11 @@ public class SignalHeritage extends UnicastRemoteObject implements monSignal{
         this.id = a;
         this.message = msg;
     }
+    public void methode() throws RemoteException, InterruptedException {
+        TimeUnit.SECONDS.sleep(10);
+        System.out.println("coucou");
 
+    }
     @Override
     public int getId() {
         return this.id;
