@@ -13,8 +13,8 @@ public class Main {
         System.out.println(System.getenv("ServBool"));
         try {
             if(System.getenv("ServBool")=="false"){
-                registry = LocateRegistry.getRegistry("127.0.0.1", 2000);
-                monSignal mi = (monSignal) registry.lookup("rmi://localhost:2000/coucou");
+                registry = LocateRegistry.getRegistry("192.168.43.249", 2000);
+                monSignal mi = (monSignal) registry.lookup("rmi://192.168.43.249:2000/coucou");
                 try {
                     mi.methode();
                 } catch (InterruptedException e) { e.printStackTrace(); }
@@ -22,7 +22,7 @@ public class Main {
             }else{
                 registry = LocateRegistry.createRegistry(2000);
                 monSignal mc = new SignalHeritage();
-                registry.bind("rmi://localhost:1099/coucou", mc);
+                registry.bind("rmi://localhost:2000/coucou", mc);
             }
         } catch (RemoteException e) {
             e.printStackTrace();

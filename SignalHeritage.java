@@ -18,7 +18,7 @@ public class SignalHeritage extends UnicastRemoteObject implements monSignal{
         this.message = msg;
     }
     public void methode() throws RemoteException, InterruptedException {
-        TimeUnit.SECONDS.sleep(10);
+//        TimeUnit.SECONDS.sleep(10);
         System.out.println("coucou");
 
     }
