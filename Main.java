@@ -1,5 +1,8 @@
 package RMI_Git;
 
+import RMI_Sign_TP1.SignalHeritage;
+import RMI_Sign_TP1.monSignal;
+
 import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -21,10 +24,13 @@ public class Main {
                 } catch (InterruptedException e) { e.printStackTrace(); }
 
             }else if(args[0].equals("serv")) {
-                System.out.println("Server");
+                System.out.println("Server1");
                 registry = LocateRegistry.createRegistry(2000);
+                System.out.println("Server2");
                 monSignal mc = new SignalHeritage();
+                System.out.println("Server3");
                 registry.bind("rmi://localhost:2000/coucou", mc);
+                System.out.println("Server4");
             }
         } catch (RemoteException e) {
             e.printStackTrace();
